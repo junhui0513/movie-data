@@ -1,0 +1,10 @@
+-- SQL Query to sort data by Release_Date column
+  
+SELECT 
+  Movie_Title,
+  Genre 1
+FROM 
+  movies -- This is the name of the data table 
+WHERE
+  Release_Date BETWEEN '2015-01-01' AND '2015-12-31'
+ORDER BY Release_Date DESC;
