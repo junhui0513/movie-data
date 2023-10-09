@@ -8,3 +8,11 @@ FROM
 WHERE
   Release_Date BETWEEN '2015-01-01' AND '2015-12-31'
 ORDER BY Release_Date DESC;
+
+-- Using the ORDER BY and WHERE clauses together helps you sort and filter data
+
+SELECT *
+FROM `bigquery-public-data.sdoh_cdc_wonder_natality.county_natality` 
+WHERE Year = '2018-01-01'
+ORDER BY Births DESC
+LIMIT 20
