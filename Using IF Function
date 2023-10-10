@@ -1,0 +1,26 @@
+SELECT 
+  stn,
+  date,
+-- Use the IF function to replace 9999.9 values with NULL
+  iF(
+    temp=9999.9,
+    NULL,
+    temp) AS temperature,
+  IF(
+    wdsp="999.9",
+    NULL,
+    CAST(wdsp AS Float64)) AS wind_speed,
+  IF(
+    prcp=99.99,
+    0,
+    prcp) AS precipitation
+
+FROM `bigquery-public-data.noaa_gsod.gsod2020` 
+
+WHERE 
+  stn="725030"
+  OR stn = "744860"
+
+ORDER BY
+  date DESC,
+  stn ASC
